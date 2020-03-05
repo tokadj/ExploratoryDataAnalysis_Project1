@@ -1,0 +1,12 @@
+png("plot4.png",width = 480,height = 480)
+par(mfrow=c(2,2))
+with(dat,{
+        plot(Global_active_power~datetime,type="l",xlab="",ylab = "Global Active Power")
+        plot(Voltage~datetime,type = "l",xlab="datetime",ylab = "Voltage")
+        plot(Sub_metering_1~datetime,type = "l",xlab = "",ylab = "Enery sub metering")
+        lines(Sub_metering_2~datetime,col="red")
+        lines(Sub_metering_3~datetime,col="blue")
+        legend("topright",lty = 1,bty="n",col = c("black","red","blue"),c("Sub_metering_1","Sub_metering_2","Sub_metering_3"))
+        plot(Global_reactive_power~datetime,type="l",xlab="datetime",ylab = "Global_Active_Power")
+})
+dev.off()
